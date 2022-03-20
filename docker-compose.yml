@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  postgesql:
+    image: postgres:latest
+    container_name: graphql-postgresql
+    ports:
+      - "5432:5432"
+    restart: always
+    environment:
+      - POSTGRES_USER=pguser
+      - POSTGRES_PASSWORD=pgpass
+      - POSTGRES_DB=gqlgen-echo-sample
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+      # copy the sql script to create tables
+      - ./db/migrations/20200413055140_CreateTasks.sql:/docker-entrypoint-initdb.d/20200413055140_CreateTasks.sql
+      # copy the sql script to fill tables
+      # - ./migrations/fill_tables.sql:/docker-entrypoint-initdb.d/fill_tables.sql
+    # networks:
+    #   - web_api

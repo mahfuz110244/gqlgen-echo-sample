@@ -28,7 +28,41 @@ $ go get github.com/yuuu/gqlgen-echo-sample
 
 ```bash
 $ goose up
+$ docker-compose up --build
 $ go run main.go
 ```
 
 Go to [http://localhost:3000/playground](http://localhost:3000/playground).
+
+task create
+```bash
+mutation {
+  createTask(
+    input: {
+    	title: "Title",
+    	note: "Note..." 
+    }
+  ) {
+    id
+    title
+    note
+    completed
+    created_at
+    updated_at
+  }
+}
+```
+
+Get all task
+```bash
+{
+  tasks {
+    id
+    title
+    note
+    completed
+    created_at
+    updated_at
+  }
+}
+```

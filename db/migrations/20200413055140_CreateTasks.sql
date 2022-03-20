@@ -14,7 +14,7 @@ CREATE INDEX task_id on tasks (id);
 
 -- +goose Down
 -- SQL section 'Down' is executed when this migration is rolled back
-DROP INDEX task_id;
-DROP TABLE tasks;
+-- DROP INDEX task_id;
+-- DROP TABLE tasks;
 
 
