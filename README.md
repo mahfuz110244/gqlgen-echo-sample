@@ -111,7 +111,7 @@ $ go get github.com/99designs/gqlgen
 $ go get github.com/labstack/echo
 $ go get github.com/jinzhu/gorm
 Echo implementation
-main.goAnd write the following code.
+main.go And write the following code.
 
 package main
 
