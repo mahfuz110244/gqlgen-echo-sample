@@ -55,7 +55,7 @@ mutation {
 
 Get all task
 ```bash
-{
+query GetAllTasks {
   tasks {
     id
     title
